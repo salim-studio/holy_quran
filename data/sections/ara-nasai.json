@@ -1,0 +1,206 @@
+﻿[
+    {
+        "id":  "1",
+        "name":  "The Book of Purification"
+    },
+    {
+        "id":  "2",
+        "name":  "The Book of Water"
+    },
+    {
+        "id":  "3",
+        "name":  "The Book of Menstruation and Istihadah"
+    },
+    {
+        "id":  "4",
+        "name":  "The Book of Ghusl and Tayammum"
+    },
+    {
+        "id":  "5",
+        "name":  "The Book of Salah"
+    },
+    {
+        "id":  "6",
+        "name":  "The Book of the Times (of Prayer)"
+    },
+    {
+        "id":  "7",
+        "name":  "The Book of the Adhan (The Call to Prayer)"
+    },
+    {
+        "id":  "8",
+        "name":  "The Book of the Masjids"
+    },
+    {
+        "id":  "9",
+        "name":  "The Book of the Qiblah"
+    },
+    {
+        "id":  "10",
+        "name":  "The Book of Leading the Prayer (Al-Imamah)"
+    },
+    {
+        "id":  "11",
+        "name":  "The Book of the Commencement of the Prayer"
+    },
+    {
+        "id":  "12",
+        "name":  "The Book of The At-Tatbiq (Clasping One\u0027s Hands Together)"
+    },
+    {
+        "id":  "13",
+        "name":  "The Book of Forgetfulness (In Prayer)"
+    },
+    {
+        "id":  "14",
+        "name":  "The Book of Jumu\u0027ah (Friday Prayer)"
+    },
+    {
+        "id":  "15",
+        "name":  "The Book of Shortening the Prayer When Traveling"
+    },
+    {
+        "id":  "16",
+        "name":  "The Book of Eclipses"
+    },
+    {
+        "id":  "17",
+        "name":  "The Book of Praying for Rain (Al-Istisqa\u0027)"
+    },
+    {
+        "id":  "18",
+        "name":  "The Book of the Fear Prayer"
+    },
+    {
+        "id":  "19",
+        "name":  "The Book of the Prayer for the Two \u0027Eids"
+    },
+    {
+        "id":  "20",
+        "name":  "The Book of Qiyam Al-Lail (The Night Prayer) and Voluntary Prayers During the Day"
+    },
+    {
+        "id":  "21",
+        "name":  "The Book of Funerals"
+    },
+    {
+        "id":  "22",
+        "name":  "The Book of Fasting"
+    },
+    {
+        "id":  "23",
+        "name":  "The Book of Zakah"
+    },
+    {
+        "id":  "24",
+        "name":  "The Book of Hajj"
+    },
+    {
+        "id":  "25",
+        "name":  "The Book of Jihad"
+    },
+    {
+        "id":  "26",
+        "name":  "The Book of Marriage"
+    },
+    {
+        "id":  "27",
+        "name":  "The Book of Divorce"
+    },
+    {
+        "id":  "28",
+        "name":  "The Book of Horses, Races and Shooting"
+    },
+    {
+        "id":  "29",
+        "name":  "The Book of Endowments"
+    },
+    {
+        "id":  "30",
+        "name":  "The Book of Wills"
+    },
+    {
+        "id":  "31",
+        "name":  "The Book of Presents"
+    },
+    {
+        "id":  "32",
+        "name":  "The Book of Gifts"
+    },
+    {
+        "id":  "33",
+        "name":  "The Book of ar-Ruqba"
+    },
+    {
+        "id":  "34",
+        "name":  "The Book of \u0027Umra"
+    },
+    {
+        "id":  "35",
+        "name":  "The Book of Agriculture"
+    },
+    {
+        "id":  "36",
+        "name":  "The Book of the Kind Treatment of Women"
+    },
+    {
+        "id":  "37",
+        "name":  "The Book of Fighting [The Prohibition of Bloodshed]"
+    },
+    {
+        "id":  "38",
+        "name":  "The Book of Distribution of Al-Fay\u0027"
+    },
+    {
+        "id":  "39",
+        "name":  "The Book of al-Bay\u0027ah"
+    },
+    {
+        "id":  "40",
+        "name":  "The Book of al-\u0027Aqiqah"
+    },
+    {
+        "id":  "41",
+        "name":  "The Book of al-Fara\u0027 and al-\u0027Atirah"
+    },
+    {
+        "id":  "42",
+        "name":  "The Book of Hunting and Slaughtering"
+    },
+    {
+        "id":  "43",
+        "name":  "The Book of ad-Dahaya (Sacrifices)"
+    },
+    {
+        "id":  "44",
+        "name":  "The Book of Financial Transactions"
+    },
+    {
+        "id":  "45",
+        "name":  "The Book of Oaths (qasamah), Retaliation and Blood Money"
+    },
+    {
+        "id":  "46",
+        "name":  "The Book of Cutting off the Hand of the Thief"
+    },
+    {
+        "id":  "47",
+        "name":  "The Book Of Faith and its Signs"
+    },
+    {
+        "id":  "48",
+        "name":  "The Book of Adornment"
+    },
+    {
+        "id":  "49",
+        "name":  "The Book of the Etiquette of Judges"
+    },
+    {
+        "id":  "50",
+        "name":  "The Book of Seeking Refuge with Allah"
+    },
+    {
+        "id":  "51",
+        "name":  "The Book of Drinks"
+    }
+]

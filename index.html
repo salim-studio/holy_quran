@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>القرآن الكريم التفاعلي</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700&family=Lateef&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                        quran: ['Amiri', 'serif'], // Fallback for Uthmani
+                        uthmani: ['Lateef', 'serif'], // Specific for Uthmani
+                    },
+                    colors: {
+                        primary: '#10b981', // Emerald 500
+                        secondary: '#064e3b', // Emerald 900
+                        accent: '#d97706', // Amber 600
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans h-screen flex overflow-hidden selection:bg-primary selection:text-white">
+
+    <!-- Sidebar (Surah List) -->
+    <aside id="sidebar" class="w-80 bg-white border-l border-gray-200 flex flex-col h-full transform transition-transform duration-300 absolute md:relative z-20 md:translate-x-0 translate-x-full">
+        <div class="p-4 border-b border-gray-100 bg-secondary text-white">
+            <div class="flex justify-between items-center mb-4">
+                <h1 class="text-xl font-bold"><i class="fas fa-book-open mr-2"></i> المكتبة الإسلامية</h1>
+                <button id="closeSidebar" class="md:hidden text-gray-200 hover:text-white">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <!-- Mode Tabs -->
+            <div class="flex bg-black/20 rounded-lg p-1 gap-1">
+                <button id="tabQuran" class="flex-1 py-2 px-2 rounded-md bg-white text-secondary font-bold text-sm transition shadow-sm">القرآن الكريم</button>
+                <button id="tabSunnah" class="flex-1 py-2 px-2 rounded-md text-gray-200 hover:bg-white/10 font-bold text-sm transition">السنة النبوية</button>
+            </div>
+        </div>
+        
+        <!-- Search -->
+        <div class="p-4 bg-gray-50">
+            <div class="relative">
+                <input type="text" id="searchInput" placeholder="بحث..." class="w-full p-2 pr-10 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-sm">
+                <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+            </div>
+        </div>
+
+        <!-- Lists Container -->
+        <div class="flex-1 overflow-hidden relative">
+            <!-- Surah List -->
+            <div id="surahList" class="absolute inset-0 overflow-y-auto p-2 space-y-1 transition-opacity duration-300">
+                <div class="text-center p-4 text-gray-400">جاري التحميل...</div>
+            </div>
+            
+            <!-- Sunnah Books List -->
+            <div id="sunnahList" class="absolute inset-0 overflow-y-auto p-2 space-y-1 opacity-0 pointer-events-none transition-opacity duration-300">
+                <!-- Books injected via JS -->
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col h-full relative w-full">
+        
+        <!-- Header -->
+        <header class="bg-white border-b border-gray-200 p-4 shadow-sm z-10 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <button id="toggleSidebar" class="md:hidden text-gray-600 hover:text-primary">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+                <div>
+                    <h2 id="currentSurahName" class="text-2xl font-bold text-secondary">سورة الفاتحة</h2>
+                    <span id="currentSurahInfo" class="text-sm text-gray-500">مكية • 7 آيات</span>
+                </div>
+            </div>
+
+            <div class="flex gap-2">
+                <button id="openSettings" class="p-2 rounded-full hover:bg-gray-100 text-gray-600" title="الإعدادات">
+                    <i class="fas fa-cog text-lg"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Verses Container -->
+        <div id="quranContainer" class="flex-1 overflow-y-auto p-4 md:p-8 pb-32 scroll-smooth bg-gray-50">
+            
+            <div id="bismillah" class="text-center mb-8 font-quran text-3xl text-secondary hidden">
+                بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+            </div>
+
+            <div id="versesList" class="max-w-4xl mx-auto space-y-6">
+                <!-- Verses will be injected here -->
+            </div>
+            
+            <div id="loader" class="hidden flex justify-center py-10">
+                <i class="fas fa-spinner fa-spin text-4xl text-primary"></i>
+            </div>
+        </div>
+
+        <!-- Sunnah Container -->
+        <div id="sunnahContainer" class="hidden flex-1 overflow-y-auto p-4 md:p-8 pb-32 scroll-smooth bg-gray-50">
+             <div id="hadithHeader" class="text-center mb-8 hidden">
+                 <h2 id="currentBookName" class="text-3xl font-bold text-secondary mb-2"></h2>
+                 <p id="currentSectionName" class="text-lg text-gray-500"></p>
+             </div>
+             <div id="hadithList" class="max-w-4xl mx-auto space-y-6">
+                 <!-- Hadiths injected here -->
+             </div>
+             <div id="hadithLoader" class="hidden flex justify-center py-10">
+                <i class="fas fa-spinner fa-spin text-4xl text-primary"></i>
+            </div>
+        </div>
+
+        <!-- Audio Player Footer -->
+        <div id="audioPlayer" class="absolute bottom-0 left-0 w-full bg-white border-t border-gray-200 p-4 shadow-lg z-30">
+            <div class="max-w-4xl mx-auto flex flex-col gap-2">
+                <!-- Progress Bar -->
+                <div class="w-full bg-gray-200 rounded-full h-1.5 cursor-pointer group" id="progressBarContainer">
+                    <div id="progressBar" class="bg-primary h-1.5 rounded-full w-0 group-hover:bg-green-600 transition-all"></div>
+                </div>
+                
+                <div class="flex justify-between items-center mt-2">
+                    <div class="flex items-center gap-4 w-1/3">
+                        <span id="currentTime" class="text-xs text-gray-500 w-10">00:00</span>
+                        <div class="hidden md:flex items-center gap-2">
+                             <i class="fas fa-volume-up text-gray-400 text-xs"></i>
+                             <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1" class="w-20 h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-center gap-6 w-1/3">
+                        <button id="prevAyah" class="text-gray-400 hover:text-secondary"><i class="fas fa-step-forward"></i></button>
+                        <button id="playPauseBtn" class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center hover:bg-green-600 shadow-md transition transform hover:scale-105">
+                            <i class="fas fa-play ml-1"></i>
+                        </button>
+                        <button id="nextAyah" class="text-gray-400 hover:text-secondary"><i class="fas fa-step-backward"></i></button>
+                    </div>
+
+                    <div class="flex items-center justify-end gap-2 w-1/3">
+                        <span id="currentReciterName" class="text-xs text-gray-500 truncate hidden md:block">مشاري العفاسي</span>
+                        <div class="relative group">
+                            <button id="repeatBtn" class="text-gray-400 hover:text-primary"><i class="fas fa-redo-alt"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <audio id="audioElement" class="hidden"></audio>
+        </div>
+    </main>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md mx-4 overflow-hidden animate-fade-in-up">
+            <div class="p-4 border-b border-gray-100 flex justify-between items-center bg-gray-50">
+                <h3 class="font-bold text-lg">الإعدادات</h3>
+                <button id="closeSettings" class="text-gray-500 hover:text-red-500"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="p-6 space-y-6">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">القارئ</label>
+                    <select id="reciterSelect" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-gray-700 focus:outline-none focus:border-primary transition">
+                    </select>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">التفسير</label>
+                    <select id="tafsirSelect" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-gray-700 focus:outline-none focus:border-primary transition">
+                        <option value="16">التفسير الميسر</option>
+                    </select>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">الترجمة</label>
+                    <select id="translationSelect" class="w-full p-2 border rounded-lg bg-white focus:ring-2 focus:ring-primary">
+                        <!-- Options injected via JS -->
+                    </select>
+                </div>
+
+                <!-- Font Size -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">حجم الخط</label>
+                    <input type="range" id="fontSizeRange" min="18" max="40" value="24" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                </div>
+                
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">وضع التصحيح</label>
+                    <label class="inline-flex items-center">
+                        <input type="checkbox" id="debugToggle" class="h-5 w-5 text-primary">
+                        <span class="ml-2 text-sm text-gray-600">إظهار سجلات التصحيح</span>
+                    </label>
+                </div>
+            </div>
+            <div class="p-4 bg-gray-50 text-right">
+                <button id="saveSettings" class="px-6 py-2 bg-primary text-white rounded-lg hover:bg-green-600">حفظ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tafsir Modal -->
+    <div id="tafsirModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-end md:items-center justify-center">
+        <div class="bg-white rounded-t-xl md:rounded-xl shadow-2xl w-full max-w-2xl mx-auto h-[80vh] md:h-auto md:max-h-[80vh] flex flex-col">
+            <div class="p-4 border-b border-gray-100 flex justify-between items-center bg-gray-50">
+                <h3 class="font-bold text-lg"><i class="fas fa-book-open text-primary mr-2"></i> التفسير</h3>
+                <button id="closeTafsir" class="text-gray-500 hover:text-red-500"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="p-6 overflow-y-auto flex-1">
+                <div id="tafsirContent" class="prose max-w-none text-right font-sans leading-relaxed">
+                    <!-- Tafsir content here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hadith Commentary Modal -->
+    <div id="hadithCommentaryModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-end md:items-center justify-center">
+        <div class="bg-white rounded-t-xl md:rounded-xl shadow-2xl w-full max-w-2xl mx-auto h-[80vh] md:h-auto md:max-h-[80vh] flex flex-col">
+            <div class="p-4 border-b border-gray-100 flex justify-between items-center bg-gray-50">
+                <h3 class="font-bold text-lg"><i class="fas fa-scroll text-primary mr-2"></i> شرح الحديث</h3>
+                <button id="closeHadithCommentary" class="text-gray-500 hover:text-red-500"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="p-6 overflow-y-auto flex-1">
+                <div id="hadithCommentaryContent" class="prose max-w-none text-right font-sans leading-relaxed"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="debugPanel" class="fixed bottom-24 left-4 bg-gray-900 text-gray-100 rounded-lg shadow-xl w-80 max-h-64 overflow-hidden z-50 hidden">
+        <div class="flex justify-between items-center p-2 bg-gray-800">
+            <span class="font-bold text-sm">سجلات التصحيح</span>
+            <div class="flex gap-2">
+                <button id="clearDebug" class="text-xs text-gray-300 hover:text-white">مسح</button>
+                <button id="closeDebug" class="text-xs text-gray-300 hover:text-white">إخفاء</button>
+            </div>
+        </div>
+        <div id="debugList" class="p-2 text-xs overflow-y-auto space-y-1"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

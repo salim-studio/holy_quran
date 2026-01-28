@@ -1,0 +1,390 @@
+﻿[
+    {
+        "id":  "1",
+        "name":  "Revelation"
+    },
+    {
+        "id":  "2",
+        "name":  "Belief"
+    },
+    {
+        "id":  "3",
+        "name":  "Knowledge"
+    },
+    {
+        "id":  "4",
+        "name":  "Ablutions (Wudu\u0027)"
+    },
+    {
+        "id":  "5",
+        "name":  "Bathing (Ghusl)"
+    },
+    {
+        "id":  "6",
+        "name":  "Menstrual Periods"
+    },
+    {
+        "id":  "7",
+        "name":  "Rubbing hands and feet with dust (Tayammum)"
+    },
+    {
+        "id":  "8",
+        "name":  "Prayers (Salat)"
+    },
+    {
+        "id":  "9",
+        "name":  "Times of the Prayers"
+    },
+    {
+        "id":  "10",
+        "name":  "Call to Prayers (Adhaan)"
+    },
+    {
+        "id":  "11",
+        "name":  "Friday Prayer"
+    },
+    {
+        "id":  "12",
+        "name":  "Fear Prayer"
+    },
+    {
+        "id":  "13",
+        "name":  "The Two Festivals (Eids)"
+    },
+    {
+        "id":  "14",
+        "name":  "Witr Prayer"
+    },
+    {
+        "id":  "15",
+        "name":  "Invoking Allah for Rain (Istisqaa)"
+    },
+    {
+        "id":  "16",
+        "name":  "Eclipses"
+    },
+    {
+        "id":  "17",
+        "name":  "Prostration During Recital of Qur\u0027an"
+    },
+    {
+        "id":  "18",
+        "name":  "Shortening the Prayers (At-Taqseer)"
+    },
+    {
+        "id":  "19",
+        "name":  "Prayer at Night (Tahajjud)"
+    },
+    {
+        "id":  "20",
+        "name":  "Virtues of Prayer at Masjid Makkah and Madinah"
+    },
+    {
+        "id":  "21",
+        "name":  "Actions while Praying"
+    },
+    {
+        "id":  "22",
+        "name":  "Forgetfulness in Prayer"
+    },
+    {
+        "id":  "23",
+        "name":  "Funerals (Al-Janaa\u0027iz)"
+    },
+    {
+        "id":  "24",
+        "name":  "Obligatory Charity Tax (Zakat)"
+    },
+    {
+        "id":  "25",
+        "name":  "Hajj (Pilgrimage)"
+    },
+    {
+        "id":  "26",
+        "name":  "`Umrah (Minor pilgrimage)"
+    },
+    {
+        "id":  "27",
+        "name":  "Pilgrims Prevented from Completing the Pilgrimage"
+    },
+    {
+        "id":  "28",
+        "name":  "Penalty of Hunting while on Pilgrimage"
+    },
+    {
+        "id":  "29",
+        "name":  "Virtues of Madinah"
+    },
+    {
+        "id":  "30",
+        "name":  "Fasting"
+    },
+    {
+        "id":  "31",
+        "name":  "Praying at Night in Ramadaan (Taraweeh)"
+    },
+    {
+        "id":  "32",
+        "name":  "Virtues of the Night of Qadr"
+    },
+    {
+        "id":  "33",
+        "name":  "Retiring to a Mosque for Remembrance of Allah (I\u0027tikaf)"
+    },
+    {
+        "id":  "34",
+        "name":  "Sales and Trade"
+    },
+    {
+        "id":  "35",
+        "name":  "Sales in which a Price is paid for Goods to be Delivered Later (As-Salam)"
+    },
+    {
+        "id":  "36",
+        "name":  "Shuf\u0027a"
+    },
+    {
+        "id":  "37",
+        "name":  "Hiring"
+    },
+    {
+        "id":  "38",
+        "name":  "Transferance of a Debt from One Person to Another (Al-Hawaala)"
+    },
+    {
+        "id":  "39",
+        "name":  "Kafalah"
+    },
+    {
+        "id":  "40",
+        "name":  "Representation, Authorization, Business by Proxy"
+    },
+    {
+        "id":  "41",
+        "name":  "Agriculture"
+    },
+    {
+        "id":  "42",
+        "name":  "Distribution of Water"
+    },
+    {
+        "id":  "43",
+        "name":  "Loans, Payment of Loans, Freezing of Property, Bankruptcy"
+    },
+    {
+        "id":  "44",
+        "name":  "Khusoomaat"
+    },
+    {
+        "id":  "45",
+        "name":  "Lost Things Picked up by Someone (Luqatah)"
+    },
+    {
+        "id":  "46",
+        "name":  "Oppressions"
+    },
+    {
+        "id":  "47",
+        "name":  "Partnership"
+    },
+    {
+        "id":  "48",
+        "name":  "Mortgaging"
+    },
+    {
+        "id":  "49",
+        "name":  "Manumission of Slaves"
+    },
+    {
+        "id":  "50",
+        "name":  "Makaatib"
+    },
+    {
+        "id":  "51",
+        "name":  "Gifts"
+    },
+    {
+        "id":  "52",
+        "name":  "Witnesses"
+    },
+    {
+        "id":  "53",
+        "name":  "Peacemaking"
+    },
+    {
+        "id":  "54",
+        "name":  "Conditions"
+    },
+    {
+        "id":  "55",
+        "name":  "Wills and Testaments (Wasaayaa)"
+    },
+    {
+        "id":  "56",
+        "name":  "Fighting for the Cause of Allah (Jihaad)"
+    },
+    {
+        "id":  "57",
+        "name":  "One-fifth of Booty to the Cause of Allah (Khumus)"
+    },
+    {
+        "id":  "58",
+        "name":  "Jizyah and Mawaada\u0027ah"
+    },
+    {
+        "id":  "59",
+        "name":  "Beginning of Creation"
+    },
+    {
+        "id":  "60",
+        "name":  "Prophets"
+    },
+    {
+        "id":  "61",
+        "name":  "Virtues and Merits of the Prophet (pbuh) and his Companions"
+    },
+    {
+        "id":  "62",
+        "name":  "Companions of the Prophet"
+    },
+    {
+        "id":  "63",
+        "name":  "Merits of the Helpers in Madinah (Ansaar)"
+    },
+    {
+        "id":  "64",
+        "name":  "Military Expeditions led by the Prophet (pbuh) (Al-Maghaazi)"
+    },
+    {
+        "id":  "65",
+        "name":  "Prophetic Commentary on the Qur\u0027an (Tafseer of the Prophet (pbuh))"
+    },
+    {
+        "id":  "66",
+        "name":  "Virtues of the Qur\u0027an"
+    },
+    {
+        "id":  "67",
+        "name":  "Wedlock, Marriage (Nikaah)"
+    },
+    {
+        "id":  "68",
+        "name":  "Divorce"
+    },
+    {
+        "id":  "69",
+        "name":  "Supporting the Family"
+    },
+    {
+        "id":  "70",
+        "name":  "Food, Meals"
+    },
+    {
+        "id":  "71",
+        "name":  "Sacrifice on Occasion of Birth (`Aqiqa)"
+    },
+    {
+        "id":  "72",
+        "name":  "Hunting, Slaughtering"
+    },
+    {
+        "id":  "73",
+        "name":  "Al-Adha Festival Sacrifice (Adaahi)"
+    },
+    {
+        "id":  "74",
+        "name":  "Drinks"
+    },
+    {
+        "id":  "75",
+        "name":  "Patients"
+    },
+    {
+        "id":  "76",
+        "name":  "Medicine"
+    },
+    {
+        "id":  "77",
+        "name":  "Dress"
+    },
+    {
+        "id":  "78",
+        "name":  "Good Manners and Form (Al-Adab)"
+    },
+    {
+        "id":  "79",
+        "name":  "Asking Permission"
+    },
+    {
+        "id":  "80",
+        "name":  "Invocations"
+    },
+    {
+        "id":  "81",
+        "name":  "To make the Heart Tender (Ar-Riqaq)"
+    },
+    {
+        "id":  "82",
+        "name":  "Divine Will (Al-Qadar)"
+    },
+    {
+        "id":  "83",
+        "name":  "Oaths and Vows"
+    },
+    {
+        "id":  "84",
+        "name":  "Expiation for Unfulfilled Oaths"
+    },
+    {
+        "id":  "85",
+        "name":  "Laws of Inheritance (Al-Faraa\u0027id)"
+    },
+    {
+        "id":  "86",
+        "name":  "Limits and Punishments set by Allah (Hudood)"
+    },
+    {
+        "id":  "87",
+        "name":  "Blood Money (Ad-Diyat)"
+    },
+    {
+        "id":  "88",
+        "name":  "Apostates"
+    },
+    {
+        "id":  "89",
+        "name":  "(Statements made under) Coercion"
+    },
+    {
+        "id":  "90",
+        "name":  "Tricks"
+    },
+    {
+        "id":  "91",
+        "name":  "Interpretation of Dreams"
+    },
+    {
+        "id":  "92",
+        "name":  "Afflictions and the End of the World"
+    },
+    {
+        "id":  "93",
+        "name":  "Judgments (Ahkaam)"
+    },
+    {
+        "id":  "94",
+        "name":  "Wishes"
+    },
+    {
+        "id":  "95",
+        "name":  "Accepting Information Given by a Truthful Person"
+    },
+    {
+        "id":  "96",
+        "name":  "Holding Fast to the Qur\u0027an and Sunnah"
+    },
+    {
+        "id":  "97",
+        "name":  "Oneness, Uniqueness of Allah (Tawheed)"
+    }
+]
